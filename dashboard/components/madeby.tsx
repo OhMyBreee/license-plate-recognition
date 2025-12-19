@@ -5,11 +5,12 @@ import { Marquee } from "@/components/ui/marquee"
 import Image from 'next/image';
 const skills = [
   { name: "Bryan Santosa" },
-  { name: "Alan Ganteng"},
+  // { name: "Alan Ganteng"},
 //   { name: "Carlson Othello Hou"},
   // { name: "Kinsley Tan"},
   { name: "Luther Ferdinand"},
-//   { name: "Kent"},
+  { name: "Kent"},
+  { name: "Hosea Jonathan"},
 //  { name: "Bob the builder"},
 //  { name: "Ilham God"},
 ];

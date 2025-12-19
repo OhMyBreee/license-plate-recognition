@@ -17,7 +17,7 @@ export function useLPRBackend() {
     setResponse(null);
 
     const fd = new FormData();
-    fd.append("file", file);
+    fd.append("image", file);
 
     try {
       const res = await fetch(API_URL, {
