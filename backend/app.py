@@ -67,7 +67,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-img_queue = queue.Queue(maxsize=3)
+img_queue = queue.Queue(maxsize=2)
 
 # last recog result
 last_status = {
@@ -165,7 +165,7 @@ def yolo_worker():
     while True:
         img = img_queue.get()  # waits for frame
 
-        results = plate_detector(img, conf=0.25, verbose=False)
+        results = plate_detector(img, conf=0.2, verbose=False)
         boxes = results[0].boxes
 
         if not boxes:
@@ -174,6 +174,7 @@ def yolo_worker():
                 "match": False,
                 "updated": True
             }
+            send_to_blynk("NO PLATE", False) 
             continue
 
         # pick biggest or most chars
